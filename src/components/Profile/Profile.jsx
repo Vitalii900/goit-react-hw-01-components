@@ -1,8 +1,10 @@
+import { Avatar, ProfileCard } from './Profile.styled';
+
 export function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <div class="profile">
+    <ProfileCard>
       <div class="description">
-        <img src={avatar} alt={username} class="avatar" />
+        <Avatar src={avatar} alt={username} />
         <p class="name">{username}</p>
         <p class="tag">@{tag}</p>
         <p class="location">{location}</p>
@@ -22,6 +24,6 @@ export function Profile({ username, tag, location, avatar, stats }) {
           <span class="quantity">{stats.likes}</span>
         </li>
       </ul>
-    </div>
+    </ProfileCard>
   );
 }
