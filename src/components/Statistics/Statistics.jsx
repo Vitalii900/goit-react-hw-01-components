@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
 import { ListItem } from '../Statistics/ListItem';
+import { Title, StatList, Section } from './Statistics.styled';
 
 export function Statistics({ title, stats }) {
   return (
-    <section class="statistics">
-      {title && <h2 class="title">{title}</h2>}
-      <ul class="stat-list">
+    <Section>
+      {title && <Title>{title}</Title>}
+      <StatList>
         {stats.map(stat => (
           <ListItem key={stat.id} stat={stat}></ListItem>
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </Section>
   );
 }
 
