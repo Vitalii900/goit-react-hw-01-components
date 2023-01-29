@@ -1,29 +1,38 @@
-import { Avatar, ProfileCard } from './Profile.styled';
+import {
+  Avatar,
+  ProfileCard,
+  ProfileName,
+  TagAndLocation,
+  SocialActivityInfoList,
+  SocialActivityItem,
+  Text,
+  Quantity,
+} from './Profile.styled';
 
 export function Profile({ username, tag, location, avatar, stats }) {
   return (
     <ProfileCard>
       <div class="description">
         <Avatar src={avatar} alt={username} />
-        <p class="name">{username}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
+        <ProfileName>{username}</ProfileName>
+        <TagAndLocation>@{tag}</TagAndLocation>
+        <TagAndLocation>{location}</TagAndLocation>
       </div>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{stats.likes}</span>
-        </li>
-      </ul>
+      <SocialActivityInfoList class="stats">
+        <SocialActivityItem>
+          <Text>Followers</Text>
+          <Quantity>{stats.followers}</Quantity>
+        </SocialActivityItem>
+        <SocialActivityItem>
+          <Text>Views</Text>
+          <Quantity>{stats.views}</Quantity>
+        </SocialActivityItem>
+        <SocialActivityItem>
+          <Text>Likes</Text>
+          <Quantity>{stats.likes}</Quantity>
+        </SocialActivityItem>
+      </SocialActivityInfoList>
     </ProfileCard>
   );
 }
