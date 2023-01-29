@@ -4,7 +4,7 @@ import { ListItemCss, Percentage } from './Statistics.styled';
 export function ListItem({ stat }) {
   return (
     <ListItemCss percentage={stat.percentage}>
-      <span class="label">{stat.label}</span>
+      <span>{stat.label}</span>
       <Percentage>{stat.percentage}%</Percentage>
     </ListItemCss>
   );

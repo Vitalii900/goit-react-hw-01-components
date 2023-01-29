@@ -12,14 +12,14 @@ import {
 export function Profile({ username, tag, location, avatar, stats }) {
   return (
     <ProfileCard>
-      <div class="description">
+      <div>
         <Avatar src={avatar} alt={username} />
         <ProfileName>{username}</ProfileName>
         <TagAndLocation>@{tag}</TagAndLocation>
         <TagAndLocation>{location}</TagAndLocation>
       </div>
 
-      <SocialActivityInfoList class="stats">
+      <SocialActivityInfoList>
         <SocialActivityItem>
           <Text>Followers</Text>
           <Quantity>{stats.followers}</Quantity>
