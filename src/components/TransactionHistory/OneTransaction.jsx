@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
+import { Td, Tr } from './Transaction.styled';
 
-export function OneTransaction({ item }) {
+export function OneTransaction({ item, index }) {
   return (
-    <tr>
-      <td>{item.type}</td>
-      <td>{item.amount}</td>
-      <td>{item.currency}</td>
-    </tr>
+    <Tr index={index}>
+      <Td>{item.type}</Td>
+      <Td>{item.amount}</Td>
+      <Td>{item.currency}</Td>
+    </Tr>
   );
 }
 

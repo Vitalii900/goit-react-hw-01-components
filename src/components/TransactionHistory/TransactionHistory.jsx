@@ -1,23 +1,28 @@
 import PropTypes from 'prop-types';
 import { OneTransaction } from './OneTransaction';
+import { Table, ThHead } from './Transaction.styled';
 
 export function TransactionHistory({ items }) {
   return (
-    <table class="transaction-history">
+    <Table>
       <thead>
         <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+          <ThHead>Type</ThHead>
+          <ThHead>Amount</ThHead>
+          <ThHead>Currency</ThHead>
         </tr>
       </thead>
 
       <tbody>
-        {items.map(item => (
-          <OneTransaction key={item.id} item={item}></OneTransaction>
+        {items.map((item, index) => (
+          <OneTransaction
+            index={index}
+            key={item.id}
+            item={item}
+          ></OneTransaction>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 }
 
